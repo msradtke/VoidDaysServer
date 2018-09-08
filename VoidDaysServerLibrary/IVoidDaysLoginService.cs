@@ -8,16 +8,13 @@ using System.Text;
 namespace VoidDaysServerLibrary
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
-    [ServiceContract]
-    public interface IService1
+    [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]
+    public interface IVoidDaysLoginService
     {
         [OperationContract]
-        string GetData(int value);
-
+        void CreateUser(string username, string password);
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        // TODO: Add your service operations here
+        string LoginUser(string username, string password);
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
