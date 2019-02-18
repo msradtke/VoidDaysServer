@@ -14,16 +14,18 @@ namespace VoidDaysServerLibrary
     {
         string _dbpwd = "password";
         string _rootDb = "voiddaysroot";
-        string _connectionString = "Server=localhost; Port=3306; Uid=root;Database=VoidDays; Pwd=100Backstroke;convert zero datetime=True;max pool size=200;sslmode=none;";
+        string _connectionString = "Server=localhost; Port=3306; Uid=root;Database=voiddaysroot; Pwd=100Backstroke;convert zero datetime=True;max pool size=200;sslmode=none;";
         UserService _userService;
         MySqlConnection _dbConn;
         public VoidDaysLoginService()
         {
             _userService = new UserService();
         }
+
+        public Action<string> MessageAction { get; }
         public void CreateUser(string username, string password)
         {
-            
+
             _dbConn = new MySql.Data.MySqlClient.MySqlConnection(_connectionString);
 
             MySqlTransaction transaction;
@@ -130,27 +132,50 @@ namespace VoidDaysServerLibrary
 
         public string LoginUser(string username, string password)
         {
-            _dbConn = new MySqlConnection(_connectionString);
-            _dbConn.Open();
-
-            MySqlCommand getUser = _dbConn.CreateCommand();
-            getUser.CommandText = "select password,schemaname FROM  " + _rootDb + ".users where username = @username";
-            getUser.Parameters.AddWithValue("@username", username);
-
-            var reader = getUser.ExecuteReader();
-            string passwordHash = "";
-            string schemaname = "";
-            if (reader.Read())
+            Console.WriteLine("Login");
+            try
             {
-                passwordHash = reader.GetString(0);
-                schemaname = reader.GetString(1);
+                _dbConn = new MySqlConnection(_connectionString);
+                _dbConn.Open();
+
+                Console.WriteLine("db open");
+
+                MySqlCommand getUser = _dbConn.CreateCommand();
+                getUser.CommandText = "select password,schemaname FROM  " + _rootDb + ".users where username = @username";
+                getUser.Parameters.AddWithValue("@username", username);
+
+                var reader = getUser.ExecuteReader();
+                string passwordHash = "";
+                string schemaname = "";
+                if (reader.Read())
+                {
+                    Console.WriteLine("read");
+                    passwordHash = reader.GetString(0);
+                    Console.WriteLine("end read 1");
+                    schemaname = reader.GetString(1);
+                    Console.WriteLine("end read 2");
+                }
+
+                if (_userService.VerifyPasswordHash(password, passwordHash))
+                {
+                    Console.WriteLine("schemaname: "+schemaname);
+                    return schemaname;
+                }
+                else
+                {
+                    Console.WriteLine("returning null");
+                    return null;                   
+                }
+
+                
             }
-
-            if (_userService.VerifyPasswordHash(password, passwordHash))
-                return schemaname;
-
-            else return null;
-            
+            catch (Exception e)
+            {
+                MessageAction(e.Message);
+                Console.WriteLine("Exception in server library");
+                Console.WriteLine(e.Message);
+            }
+            return null;
         }
     }
 }

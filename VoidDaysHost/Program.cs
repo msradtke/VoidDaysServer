@@ -21,23 +21,29 @@ namespace VoidDaysHost
 
             try
             {
+                //selfHost.Opened += Opened;
+                selfHost.Opened += new EventHandler(Opened);
+                
                 // Step 3 Add a service endpoint.  
-                selfHost.AddServiceEndpoint(typeof(IVoidDaysLoginService), new WSHttpBinding(), "VoidDaysLoginService");
-
+                var endpoint = selfHost.AddServiceEndpoint(typeof(IVoidDaysLoginService), new WSHttpBinding(), "VoidDaysLoginService");
                 // Step 4 Enable metadata exchange.  
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true;
                 selfHost.Description.Behaviors.Add(smb);
-
-                // Step 5 Start the service.  
+                
+                // Step 5 Start the service. 
+                
                 selfHost.Open();
+                
                 Console.WriteLine("The service is ready.");
                 Console.WriteLine("Press <ENTER> to terminate service.");
                 Console.WriteLine();
-                Console.ReadLine();
+                //Console.ReadLine();
 
                 // Close the ServiceHostBase to shutdown the service.  
-                selfHost.Close();
+                //Task.Run(()=>ReadLineLoop(selfHost));
+                ReadLineLoop(selfHost);
+                //Console.ReadLine();
             }
             catch (CommunicationException ce)
             {
@@ -45,5 +51,19 @@ namespace VoidDaysHost
                 selfHost.Abort();
             }
         }
+        static void Opened(object sender, EventArgs e)
+        {
+            Console.WriteLine("opened");
+        }
+        static void ReadLineLoop(ServiceHost selfHost)
+        {
+            string close = "";
+            while (!close.Equals("exit", StringComparison.OrdinalIgnoreCase))
+            {
+                close = Console.ReadLine();
+            }
+            selfHost.Close();
+        }
     }
+
 }

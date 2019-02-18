@@ -50,17 +50,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ServiceReference2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\VoidDaysLoginService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\ServiceReference1\CalculatorService.wsdl" />
-    <None Include="Connected Services\ServiceReference1\item.wsdl" />
-    <None Include="Connected Services\ServiceReference1\item.xsd">
+    <None Include="Connected Services\ServiceReference1\Microsoft.ServiceModel.Samples.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Microsoft.ServiceModel.Samples.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\item1.xsd">
+    <None Include="Connected Services\ServiceReference1\service.wsdl" />
+    <None Include="Connected Services\ServiceReference1\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\Microsoft.ServiceModel.Samples.wsdl" />
+    <None Include="Connected Services\ServiceReference2\Microsoft.ServiceModel.Samples.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference2\service.wsdl" />
+    <None Include="Connected Services\ServiceReference2\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VoidDaysLoginService\Microsoft.ServiceModel.Samples.wsdl" />
+    <None Include="Connected Services\VoidDaysLoginService\Microsoft.ServiceModel.Samples.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\VoidDaysLoginService\service.wsdl" />
+    <None Include="Connected Services\VoidDaysLoginService\service.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -69,9 +95,20 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
+    <WCFMetadataStorage Include="Connected Services\VoidDaysLoginService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\item.disco" />
+    <None Include="Connected Services\VoidDaysLoginService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\VoidDaysLoginService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\VoidDaysLoginService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
@@ -81,6 +118,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference2\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

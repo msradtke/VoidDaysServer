@@ -39,9 +39,24 @@ namespace VoidDaysServerLibrary.Services
 
         public bool VerifyPasswordHash(string password, string hash)
         {
-            if (PasswordHash.ScryptHashStringVerify(hash, password))
+            Console.WriteLine("User service");
+            Console.WriteLine(password);
+            Console.WriteLine(hash);
+            try
             {
-                return true;
+                if (PasswordHash.ScryptHashStringVerify(hash, password))
+                {
+                    Console.WriteLine("return true from passowrd");
+                    return true;
+                }
+                Console.WriteLine("return false from passwd");
+                return false;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Exception after hash verifiy --");
+                Console.WriteLine(e.Message);
+
             }
             return false;
         }
