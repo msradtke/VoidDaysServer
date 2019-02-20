@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c59f4d90-3199-4af6-8548-0a722697e7a8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/VoidDaysLoginService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Microsoft.ServiceModel.Samples.wsdl" MetadataType="Wsdl" ID="44c18ab9-b1ca-4d29-afbc-e03de6173b7d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/VoidDaysLoginService/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="052121e5-2723-40be-b83a-e194b8d3e4d3" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/VoidDaysLoginService/mex" />
+    <MetadataFile FileName="Microsoft.ServiceModel.Samples.xsd" MetadataType="Schema" ID="e1982f5d-2634-4225-818b-fb1176ec5d83" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/VoidDaysLoginService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="a7de68fa-b9b9-4078-b3d1-085467ececa9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/VoidDaysLoginService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using VoidDaysConsoleClient.ServiceReference1;
+using VoidDaysConsoleClient.VoidDaysLoginService;
 
 namespace VoidDaysConsoleClient
 {
     class Program
     {
+
         static VoidDaysLoginServiceClient client;
         static void Main(string[] args)
         {
