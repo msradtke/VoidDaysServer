@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Lt9k0JIexptTH83B0IiszUMTXB8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="4vjvbeqg23GDooRC1u/40w9ntvo=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IVoidDaysLoginService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IVoidDaysLoginService" contract="ServiceReference1.IVoidDaysLoginService" bindingType="basicHttpBinding" address="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/CalculatorService/" bindingConfiguration="BasicHttpBinding_IVoidDaysLoginService">
+    <endpoint name="BasicHttpBinding_IVoidDaysLoginService" contract="ServiceReference1.IVoidDaysLoginService" bindingType="basicHttpBinding" address="http://3.16.24.128:8733/Design_Time_Addresses/VoidDaysServerLibrary/VoidDaysLoginService" bindingConfiguration="BasicHttpBinding_IVoidDaysLoginService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/CalculatorService/</serializedValue>
+          <serializedValue>http://3.16.24.128:8733/Design_Time_Addresses/VoidDaysServerLibrary/VoidDaysLoginService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

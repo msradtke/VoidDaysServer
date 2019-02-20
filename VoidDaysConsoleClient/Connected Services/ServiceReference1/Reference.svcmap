@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5033c55c-dd32-42b3-a7a2-9174407a9d06" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7d466caa-9f82-4cd6-b92b-8d4e1413eb8f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/CalculatorService/" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://3.16.24.128:8733/Design_Time_Addresses/VoidDaysServerLibrary/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="6abbec0e-066a-4fd6-bdf4-88fc501ecf94" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/CalculatorService/?wsdl=wsdl0" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="81e07a20-0535-4d6f-a81c-980abcf88114" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/CalculatorService/?disco" />
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="b6d78665-d6ab-4676-8188-2380a547c2a9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/CalculatorService/?xsd=xsd1" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="5c40d060-ad43-4331-b8fc-87f99533d18a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/CalculatorService/?xsd=xsd0" />
-    <MetadataFile FileName="CalculatorService.wsdl" MetadataType="Wsdl" ID="192a82cf-c7c6-44bb-bb42-b3639865dfda" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/CalculatorService/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="78b24b32-632f-4e2d-ad9e-7134fdda423b" SourceId="1" SourceUrl="http://3.16.24.128:8733/Design_Time_Addresses/VoidDaysServerLibrary/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="f8140082-b194-48b0-879f-b5a664990380" SourceId="1" SourceUrl="http://3.16.24.128:8733/Design_Time_Addresses/VoidDaysServerLibrary/?xsd=xsd0" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="e86fead3-e2aa-4245-89b2-64ee1832a9fe" SourceId="1" SourceUrl="http://3.16.24.128:8733/Design_Time_Addresses/VoidDaysServerLibrary/?disco" />
+    <MetadataFile FileName="VoidDaysLoginService.wsdl" MetadataType="Wsdl" ID="94799684-82f9-4764-8232-b38556da99a6" SourceId="1" SourceUrl="http://3.16.24.128:8733/Design_Time_Addresses/VoidDaysServerLibrary/?wsdl" />
+    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="39a821d4-a96b-4b5f-b6bf-c0fb79166048" SourceId="1" SourceUrl="http://3.16.24.128:8733/Design_Time_Addresses/VoidDaysServerLibrary/?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

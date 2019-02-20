@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Description;
@@ -13,8 +14,12 @@ namespace VoidDaysHost
     {
         static void Main(string[] args)
         {
+            string path = Environment.GetEnvironmentVariable("PATH");
+            string binDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
+            Console.WriteLine(binDir);
+            Environment.SetEnvironmentVariable("PATH", path + ";" + binDir);
             // Step 1 Create a URI to serve as the base address.  
-            Uri baseAddress = new Uri("http://localhost:8733/Design_Time_Addresses/VoidDaysServerLibrary/");
+            Uri baseAddress = new Uri("http://3.16.24.128:8733/Design_Time_Addresses/VoidDaysServerLibrary/");
 
             // Step 2 Create a ServiceHost instance  
             ServiceHost selfHost = new ServiceHost(typeof(VoidDaysLoginService), baseAddress);
@@ -22,7 +27,7 @@ namespace VoidDaysHost
             try
             {
                 // Step 3 Add a service endpoint.  
-                selfHost.AddServiceEndpoint(typeof(IVoidDaysLoginService), new WSHttpBinding(), "VoidDaysLoginService");
+                selfHost.AddServiceEndpoint(typeof(IVoidDaysLoginService), new BasicHttpBinding(), "VoidDaysLoginService");
 
                 // Step 4 Enable metadata exchange.  
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
