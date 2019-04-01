@@ -35,14 +35,15 @@ namespace VoidDaysHost
                 selfHost.Description.Behaviors.Add(smb);
 
                 // Step 5 Start the service.  
-                selfHost.Open();
+                Task.Factory.StartNew(() => selfHost.Open());
                 Console.WriteLine("The service is ready.");
                 Console.WriteLine("Press <ENTER> to terminate service.");
                 Console.WriteLine();
-                Console.ReadLine();
+                Wait(selfHost);
+
 
                 // Close the ServiceHostBase to shutdown the service.  
-                selfHost.Close();
+                
             }
             catch (CommunicationException ce)
             {
@@ -50,5 +51,18 @@ namespace VoidDaysHost
                 selfHost.Abort();
             }
         }
+        static void Wait(ServiceHost selfHost)
+        {
+            while (true)
+            {
+                var read = Console.ReadLine();
+                if (string.Equals(read, "exit", StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
+            }
+            selfHost.Close();
+        }
     }
+
 }
