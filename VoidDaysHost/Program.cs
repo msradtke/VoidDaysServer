@@ -28,22 +28,22 @@ namespace VoidDaysHost
             {
                 // Step 3 Add a service endpoint.  
                 selfHost.AddServiceEndpoint(typeof(IVoidDaysLoginService), new BasicHttpBinding(), "VoidDaysLoginService");
-
+                
                 // Step 4 Enable metadata exchange.  
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true;
                 selfHost.Description.Behaviors.Add(smb);
 
                 // Step 5 Start the service.  
-                Task.Factory.StartNew(() => selfHost.Open());
+                selfHost.Open();
                 Console.WriteLine("The service is ready.");
                 Console.WriteLine("Press <ENTER> to terminate service.");
                 Console.WriteLine();
-                Wait(selfHost);
-
+                Wait();
+                selfHost.Close();
 
                 // Close the ServiceHostBase to shutdown the service.  
-                
+
             }
             catch (CommunicationException ce)
             {
@@ -51,7 +51,7 @@ namespace VoidDaysHost
                 selfHost.Abort();
             }
         }
-        static void Wait(ServiceHost selfHost)
+        static void Wait()
         {
             while (true)
             {
@@ -61,7 +61,7 @@ namespace VoidDaysHost
                     break;
                 }
             }
-            selfHost.Close();
+            
         }
     }
 
